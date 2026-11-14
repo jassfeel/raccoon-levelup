@@ -40,7 +40,7 @@ h2{font-family:var(--font-display);font-weight:400;font-size:20px;margin:0;lette
 .name{font-family:var(--font-display);font-size:26px;line-height:1.1}
 .name-btn{display:flex;align-items:baseline;gap:6px;padding:0}
 .name-btn small{font-size:12px;color:var(--muted)}
-.lv{margin-left:auto;font-family:var(--font-display);font-size:26px;color:var(--accent);font-variant-numeric:tabular-nums}
+.lv{margin-left:12px;font-family:var(--font-display);font-size:26px;color:var(--accent);font-variant-numeric:tabular-nums}
 .lv span{font-size:14px;color:var(--muted);margin-right:2px}
 .title-chip{font-size:12px;font-weight:600;color:var(--accent-ink);background:var(--accent-soft);padding:2px 10px;border-radius:99px}
 .streak{font-size:12px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:4px}
@@ -50,10 +50,35 @@ h2{font-family:var(--font-display);font-weight:400;font-size:20px;margin:0;lette
 .xp-txt{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;font-variant-numeric:tabular-nums}
 
 /* tabs */
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:3px}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:3px}
 .tabs button{padding:8px 0;border-radius:9px;font-weight:600;font-size:14px;color:var(--muted)}
 .tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
 .panel{display:flex;flex-direction:column;gap:12px}
+
+/* streak flame + coins */
+.flame{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);padding:2px 9px 2px 6px;border-radius:99px}
+.flame svg{width:14px;height:14px}
+.flame.lit{color:var(--accent-ink);background:var(--accent-soft);border-color:transparent}
+.flame b{font-variant-numeric:tabular-nums}
+.goal{font-size:12px;color:var(--muted)}
+.coins{margin-left:auto;display:inline-flex;align-items:center;gap:4px;font-weight:600;font-size:14px;font-variant-numeric:tabular-nums}
+.coins svg{width:18px;height:18px}
+/* shop */
+.shop{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.sitem{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.sitem svg.ic{width:64px;height:64px}
+.sitem .nm{font-size:14px;font-weight:600}
+.buy{width:100%;padding:8px 0;border-radius:10px;font-weight:600;font-size:13px;background:var(--accent);color:#fff;display:inline-flex;justify-content:center;align-items:center;gap:4px}
+.buy svg{width:15px;height:15px}
+.buy.armed{background:var(--moss)}
+.buy:disabled{background:var(--surface-2);color:var(--muted);cursor:default}
+.buy.owned{background:transparent;color:var(--moss);border:1px solid var(--line)}
+/* dad letter */
+.letter{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-align:left;display:flex;flex-direction:column;gap:4px}
+.letter .from{font-size:12px;color:var(--accent-ink);font-weight:600}
+.letter p{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.cheers{display:flex;flex-direction:column;gap:8px}
+.cheers .meta{font-size:11px}
 
 /* add form */
 .add{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px;display:flex;flex-direction:column;gap:10px}
@@ -151,11 +176,14 @@ h2{font-family:var(--font-display);font-weight:400;font-size:20px;margin:0;lette
 <pattern id="pt-kara-g" patternUnits="userSpaceOnUse" width="22" height="18"><rect width="22" height="18" fill="#2F7A55"/><path d="M4 14 q0 -6 5 -6 q4 0 4 4 q0 3 -3 3 q-2 0 -2 -2 M13 12 q3 -8 10 -6" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"/><g transform="translate(11 9)"><path d="M4 14 q0 -6 5 -6 q4 0 4 4 q0 3 -3 3 q-2 0 -2 -2 M13 12 q3 -8 10 -6" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"/></g></pattern>
         <pattern id="pt-kara-r" patternUnits="userSpaceOnUse" width="22" height="18"><rect width="22" height="18" fill="#C7414B"/><path d="M4 14 q0 -6 5 -6 q4 0 4 4 q0 3 -3 3 q-2 0 -2 -2 M13 12 q3 -8 10 -6" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"/><g transform="translate(11 9)"><path d="M4 14 q0 -6 5 -6 q4 0 4 4 q0 3 -3 3 q-2 0 -2 -2 M13 12 q3 -8 10 -6" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"/></g></pattern>
         <pattern id="pt-dot-n" patternUnits="userSpaceOnUse" width="12" height="12"><rect width="12" height="12" fill="#2E3F73"/><circle cx="3" cy="3" r="1.8" fill="#FFFFFF"/><circle cx="9" cy="9" r="1.8" fill="#FFFFFF"/></pattern>
+        <pattern id="pt-dot-y" patternUnits="userSpaceOnUse" width="12" height="12"><rect width="12" height="12" fill="#E3AE3E"/><circle cx="3" cy="3" r="1.8" fill="#FFFFFF"/><circle cx="9" cy="9" r="1.8" fill="#FFFFFF"/></pattern>
+        <linearGradient id="g-aurora" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10233A"/><stop offset="1" stop-color="#27466A"/></linearGradient>
       </defs>
       <g id="bg-dusk"><rect width="320" height="230" fill="url(#g-dusk)"/><circle cx="252" cy="58" r="22" fill="#F7E3C9"/><path d="M0 196 Q80 176 160 192 T320 186 V230 H0Z" fill="#A7A0BC"/></g>
       <g id="bg-moon" hidden><rect width="320" height="230" fill="url(#g-moon)"/><circle cx="250" cy="56" r="26" fill="#F3E6C2"/><circle cx="240" cy="50" r="5" fill="#E2D3AA"/><circle cx="258" cy="66" r="3.5" fill="#E2D3AA"/><g fill="#F3E6C2"><circle cx="40" cy="40" r="1.4"/><circle cx="90" cy="24" r="1"/><circle cx="150" cy="44" r="1.2"/><circle cx="200" cy="20" r="1"/><circle cx="296" cy="110" r="1.2"/></g><path d="M0 198 Q90 180 170 194 T320 188 V230 H0Z" fill="#26324F"/></g>
       <g id="bg-forest" hidden><rect width="320" height="230" fill="url(#g-forest)"/><g fill="#6F9A82"><path d="M22 200 L44 120 L66 200Z"/><path d="M50 200 L70 140 L90 200Z"/><path d="M250 200 L274 110 L298 200Z"/><path d="M282 200 L300 150 L318 200Z"/></g><g fill="#5A8570"><path d="M228 200 L244 150 L260 200Z"/></g><path d="M0 198 Q100 186 170 196 T320 192 V230 H0Z" fill="#7FA48E"/></g>
       <g id="bg-stars" hidden><rect width="320" height="230" fill="url(#g-stars)"/><g stroke="#B9A8E8" stroke-width=".8" opacity=".7" fill="none"><path d="M30 60 L62 40 L96 52 L120 30"/><path d="M226 30 L252 54 L284 44 L296 76"/></g><g fill="#F1EAFF"><circle cx="30" cy="60" r="2"/><circle cx="62" cy="40" r="2.4"/><circle cx="96" cy="52" r="1.8"/><circle cx="120" cy="30" r="2.2"/><circle cx="226" cy="30" r="2"/><circle cx="252" cy="54" r="2.4"/><circle cx="284" cy="44" r="1.8"/><circle cx="296" cy="76" r="2.2"/><circle cx="170" cy="20" r="1"/><circle cx="12" cy="120" r="1"/><circle cx="310" cy="130" r="1"/></g><path d="M0 198 Q90 182 170 194 T320 188 V230 H0Z" fill="#2B2245"/></g>
+      <g id="bg-aurora" hidden><rect width="320" height="230" fill="url(#g-aurora)"/><path d="M0 80 Q70 30 150 66 T320 40 L320 96 Q240 70 160 104 T0 120Z" fill="#6FE3B4" opacity=".38"/><path d="M0 50 Q90 20 170 50 T320 70 L320 100 Q230 64 160 84 T0 86Z" fill="#B18CF2" opacity=".28"/><g fill="#EAF6FF"><circle cx="30" cy="24" r="1.3"/><circle cx="120" cy="16" r="1"/><circle cx="210" cy="26" r="1.4"/><circle cx="290" cy="18" r="1"/><circle cx="260" cy="120" r="1"/></g><path d="M0 198 Q90 182 170 194 T320 188 V230 H0Z" fill="#183049"/></g>
       <ellipse cx="160" cy="214" rx="56" ry="7" fill="#000" opacity=".14"/>
       <g transform="translate(60 24)"><g id="racc">
         <g class="tail-g">
@@ -201,7 +229,14 @@ h2{font-family:var(--font-display);font-weight:400;font-size:20px;margin:0;lette
             <g id="acc-bandana" hidden><path d="M40 100 Q46 122 90 134 L92 127 Q54 116 48 96Z" fill="url(#pt-kara-g)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M160 100 Q154 122 110 134 L108 127 Q146 116 152 96Z" fill="url(#pt-kara-g)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M40 100 Q32 58 50 38 Q54 24 66 32 Q84 28 100 30 Q116 28 134 32 Q146 24 150 38 Q168 58 160 100 Q132 74 100 74 Q68 74 40 100Z" fill="url(#pt-kara-g)" stroke="#3E3532" stroke-width="2.4" stroke-linejoin="round"/><path d="M48 92 Q70 80 100 80 Q130 80 152 92" fill="none" stroke="#3E3532" stroke-width="1.2" opacity=".35"/><path d="M98 130 L76 150 L86 154 Z" fill="url(#pt-kara-g)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M102 130 L124 150 L114 154 Z" fill="url(#pt-kara-g)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><ellipse cx="100" cy="131" rx="8" ry="6.5" fill="url(#pt-kara-g)" stroke="#3E3532" stroke-width="2.2"/></g>
             <g id="acc-bandana-red" hidden><path d="M40 100 Q46 122 90 134 L92 127 Q54 116 48 96Z" fill="url(#pt-kara-r)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M160 100 Q154 122 110 134 L108 127 Q146 116 152 96Z" fill="url(#pt-kara-r)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M40 100 Q32 58 50 38 Q54 24 66 32 Q84 28 100 30 Q116 28 134 32 Q146 24 150 38 Q168 58 160 100 Q132 74 100 74 Q68 74 40 100Z" fill="url(#pt-kara-r)" stroke="#3E3532" stroke-width="2.4" stroke-linejoin="round"/><path d="M48 92 Q70 80 100 80 Q130 80 152 92" fill="none" stroke="#3E3532" stroke-width="1.2" opacity=".35"/><path d="M98 130 L76 150 L86 154 Z" fill="url(#pt-kara-r)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M102 130 L124 150 L114 154 Z" fill="url(#pt-kara-r)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><ellipse cx="100" cy="131" rx="8" ry="6.5" fill="url(#pt-kara-r)" stroke="#3E3532" stroke-width="2.2"/></g>
             <g id="acc-bandana-dot" hidden><path d="M40 100 Q46 122 90 134 L92 127 Q54 116 48 96Z" fill="url(#pt-dot-n)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M160 100 Q154 122 110 134 L108 127 Q146 116 152 96Z" fill="url(#pt-dot-n)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M40 100 Q32 58 50 38 Q54 24 66 32 Q84 28 100 30 Q116 28 134 32 Q146 24 150 38 Q168 58 160 100 Q132 74 100 74 Q68 74 40 100Z" fill="url(#pt-dot-n)" stroke="#3E3532" stroke-width="2.4" stroke-linejoin="round"/><path d="M48 92 Q70 80 100 80 Q130 80 152 92" fill="none" stroke="#3E3532" stroke-width="1.2" opacity=".35"/><path d="M98 130 L76 150 L86 154 Z" fill="url(#pt-dot-n)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M102 130 L124 150 L114 154 Z" fill="url(#pt-dot-n)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><ellipse cx="100" cy="131" rx="8" ry="6.5" fill="url(#pt-dot-n)" stroke="#3E3532" stroke-width="2.2"/></g>
+            <g id="acc-beret" hidden><g transform="rotate(-7 100 46)"><path d="M46 58 Q50 28 100 26 Q152 28 156 54 Q152 66 100 64 Q54 66 46 58Z" fill="#B5433F" stroke="#3E3532" stroke-width="2.4" stroke-linejoin="round"/><path d="M100 26 L101 17" stroke="#3E3532" stroke-width="3" stroke-linecap="round"/><path d="M60 52 Q100 44 142 50" fill="none" stroke="#D7655F" stroke-width="2" opacity=".7"/></g></g>
+            <g id="acc-straw" hidden><ellipse cx="100" cy="60" rx="68" ry="13" fill="#E8C77D" stroke="#3E3532" stroke-width="2.4"/><path d="M64 60 Q63 22 100 21 Q137 22 136 60Z" fill="#EED38E" stroke="#3E3532" stroke-width="2.4" stroke-linejoin="round"/><path d="M64.3 48 Q100 53 135.7 48 L136 58 Q100 63 64 58Z" fill="#8E3A45"/><g stroke="#C9A65A" stroke-width="1.2" opacity=".8"><path d="M50 62 Q100 70 150 62"/><path d="M74 34 Q100 30 126 34"/></g></g>
+            <g id="acc-flower" hidden><ellipse cx="41.0" cy="67.0" rx="5" ry="2.6" fill="#7DAA6E" transform="rotate(-30 41.0 67.0)"/><circle cx="48.0" cy="59.0" r="3.6" fill="#F2A7B8" stroke="#3E3532" stroke-width="1"/><circle cx="52.8" cy="62.5" r="3.6" fill="#F2A7B8" stroke="#3E3532" stroke-width="1"/><circle cx="50.9" cy="68.0" r="3.6" fill="#F2A7B8" stroke="#3E3532" stroke-width="1"/><circle cx="45.1" cy="68.0" r="3.6" fill="#F2A7B8" stroke="#3E3532" stroke-width="1"/><circle cx="43.2" cy="62.5" r="3.6" fill="#F2A7B8" stroke="#3E3532" stroke-width="1"/><circle cx="48.0" cy="64.0" r="2.6" fill="#E9A23B"/><ellipse cx="58.3" cy="57.0" rx="5" ry="2.6" fill="#7DAA6E" transform="rotate(-30 58.3 57.0)"/><circle cx="65.3" cy="49.0" r="3.6" fill="#FFFFFF" stroke="#3E3532" stroke-width="1"/><circle cx="70.1" cy="52.5" r="3.6" fill="#FFFFFF" stroke="#3E3532" stroke-width="1"/><circle cx="68.3" cy="58.0" r="3.6" fill="#FFFFFF" stroke="#3E3532" stroke-width="1"/><circle cx="62.4" cy="58.0" r="3.6" fill="#FFFFFF" stroke="#3E3532" stroke-width="1"/><circle cx="60.6" cy="52.5" r="3.6" fill="#FFFFFF" stroke="#3E3532" stroke-width="1"/><circle cx="65.3" cy="54.0" r="2.6" fill="#E9A23B"/><ellipse cx="75.7" cy="51.0" rx="5" ry="2.6" fill="#7DAA6E" transform="rotate(-30 75.7 51.0)"/><circle cx="82.7" cy="43.0" r="3.6" fill="#F6D365" stroke="#3E3532" stroke-width="1"/><circle cx="87.4" cy="46.5" r="3.6" fill="#F6D365" stroke="#3E3532" stroke-width="1"/><circle cx="85.6" cy="52.0" r="3.6" fill="#F6D365" stroke="#3E3532" stroke-width="1"/><circle cx="79.7" cy="52.0" r="3.6" fill="#F6D365" stroke="#3E3532" stroke-width="1"/><circle cx="77.9" cy="46.5" r="3.6" fill="#F6D365" stroke="#3E3532" stroke-width="1"/><circle cx="82.7" cy="48.0" r="2.6" fill="#E9A23B"/><ellipse cx="93.0" cy="49.0" rx="5" ry="2.6" fill="#7DAA6E" transform="rotate(-30 93.0 49.0)"/><circle cx="100.0" cy="41.0" r="3.6" fill="#F2A7B8" stroke="#3E3532" stroke-width="1"/><circle cx="104.8" cy="44.5" r="3.6" fill="#F2A7B8" stroke="#3E3532" stroke-width="1"/><circle cx="102.9" cy="50.0" r="3.6" fill="#F2A7B8" stroke="#3E3532" stroke-width="1"/><circle cx="97.1" cy="50.0" r="3.6" fill="#F2A7B8" stroke="#3E3532" stroke-width="1"/><circle cx="95.2" cy="44.5" r="3.6" fill="#F2A7B8" stroke="#3E3532" stroke-width="1"/><circle cx="100.0" cy="46.0" r="2.6" fill="#E9A23B"/><ellipse cx="110.3" cy="51.0" rx="5" ry="2.6" fill="#7DAA6E" transform="rotate(-30 110.3 51.0)"/><circle cx="117.3" cy="43.0" r="3.6" fill="#B9A3E8" stroke="#3E3532" stroke-width="1"/><circle cx="122.1" cy="46.5" r="3.6" fill="#B9A3E8" stroke="#3E3532" stroke-width="1"/><circle cx="120.3" cy="52.0" r="3.6" fill="#B9A3E8" stroke="#3E3532" stroke-width="1"/><circle cx="114.4" cy="52.0" r="3.6" fill="#B9A3E8" stroke="#3E3532" stroke-width="1"/><circle cx="112.6" cy="46.5" r="3.6" fill="#B9A3E8" stroke="#3E3532" stroke-width="1"/><circle cx="117.3" cy="48.0" r="2.6" fill="#E9A23B"/><ellipse cx="127.7" cy="57.0" rx="5" ry="2.6" fill="#7DAA6E" transform="rotate(-30 127.7 57.0)"/><circle cx="134.7" cy="49.0" r="3.6" fill="#FFFFFF" stroke="#3E3532" stroke-width="1"/><circle cx="139.4" cy="52.5" r="3.6" fill="#FFFFFF" stroke="#3E3532" stroke-width="1"/><circle cx="137.6" cy="58.0" r="3.6" fill="#FFFFFF" stroke="#3E3532" stroke-width="1"/><circle cx="131.7" cy="58.0" r="3.6" fill="#FFFFFF" stroke="#3E3532" stroke-width="1"/><circle cx="129.9" cy="52.5" r="3.6" fill="#FFFFFF" stroke="#3E3532" stroke-width="1"/><circle cx="134.7" cy="54.0" r="2.6" fill="#E9A23B"/><ellipse cx="145.0" cy="67.0" rx="5" ry="2.6" fill="#7DAA6E" transform="rotate(-30 145.0 67.0)"/><circle cx="152.0" cy="59.0" r="3.6" fill="#F6D365" stroke="#3E3532" stroke-width="1"/><circle cx="156.8" cy="62.5" r="3.6" fill="#F6D365" stroke="#3E3532" stroke-width="1"/><circle cx="154.9" cy="68.0" r="3.6" fill="#F6D365" stroke="#3E3532" stroke-width="1"/><circle cx="149.1" cy="68.0" r="3.6" fill="#F6D365" stroke="#3E3532" stroke-width="1"/><circle cx="147.2" cy="62.5" r="3.6" fill="#F6D365" stroke="#3E3532" stroke-width="1"/><circle cx="152.0" cy="64.0" r="2.6" fill="#E9A23B"/></g>
+            <g id="acc-bandana-yellow" hidden><path d="M40 100 Q46 122 90 134 L92 127 Q54 116 48 96Z" fill="url(#pt-dot-y)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M160 100 Q154 122 110 134 L108 127 Q146 116 152 96Z" fill="url(#pt-dot-y)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M40 100 Q32 58 50 38 Q54 24 66 32 Q84 28 100 30 Q116 28 134 32 Q146 24 150 38 Q168 58 160 100 Q132 74 100 74 Q68 74 40 100Z" fill="url(#pt-dot-y)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M48 92 Q70 80 100 80 Q130 80 152 92" fill="none" stroke="#3E3532" stroke-width="1.2" opacity=".35"/><path d="M98 130 L76 150 L86 154 Z" fill="url(#pt-dot-y)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><path d="M102 130 L124 150 L114 154 Z" fill="url(#pt-dot-y)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/><ellipse cx="100" cy="131" rx="8" ry="6.5" fill="url(#pt-dot-y)" stroke="#3E3532" stroke-width="2.2" stroke-linejoin="round"/></g>
           </g>
+          <g id="acc-bowtie" hidden><path d="M100 137 L84 129 Q81 137 84 145Z" fill="#33508A" stroke="#3E3532" stroke-width="2" stroke-linejoin="round"/><path d="M100 137 L116 129 Q119 137 116 145Z" fill="#33508A" stroke="#3E3532" stroke-width="2" stroke-linejoin="round"/><rect x="95.5" y="132.5" width="9" height="9" rx="3" fill="#4A6CB0" stroke="#3E3532" stroke-width="2"/></g>
+          <g id="acc-ribbon" hidden transform="translate(62 50) rotate(-20)"><path d="M0 0 L-12 -8 Q-15 0 -12 8Z" fill="#F08CA8" stroke="#3E3532" stroke-width="1.8" stroke-linejoin="round"/><path d="M0 0 L12 -8 Q15 0 12 8Z" fill="#F08CA8" stroke="#3E3532" stroke-width="1.8" stroke-linejoin="round"/><circle r="3.6" fill="#E46F92" stroke="#3E3532" stroke-width="1.8"/></g>
+          <g id="acc-flame-pin" hidden transform="translate(138 52) rotate(18)"><path d="M0 -12 C2 -6 8 -4 8 3 A8 8 0 0 1 -8 3 C-8 -1 -5 -4 -3 -6 C-3 -3 -1 -1 1 -1 C0 -5 -1 -9 0 -12Z" fill="#F08A2C" stroke="#3E3532" stroke-width="1.8" stroke-linejoin="round"/><path d="M0 -2 C1 1 4 2 4 5 A4 4 0 0 1 -4 5 C-4 3 -2 1 0 -2Z" fill="#F7D04A"/></g>
         </g>
       </g></g>
       <g id="bubble-g">
@@ -213,11 +248,13 @@ h2{font-family:var(--font-display);font-weight:400;font-size:20px;margin:0;lette
     <div class="stage-info">
       <div class="row">
         <button class="name-btn" id="rename" type="button" aria-label="라쿤 이름 바꾸기"><span class="name" id="rname">라쿤</span><small>이름 바꾸기</small></button>
+        <span class="coins" id="coins" title="도토리"></span>
         <div class="lv" id="lv"><span>Lv.</span>1</div>
       </div>
       <div class="row">
         <span class="title-chip" id="rtitle">아기 라쿤</span>
-        <span class="streak" id="streak"></span>
+        <span class="flame" id="flame"></span>
+        <span class="goal" id="goal"></span>
       </div>
       <div class="bar" aria-hidden="true"><i id="xpbar"></i></div>
       <div class="xp-txt"><span id="xptxt">0 / 60 XP</span><span id="nexttxt"></span></div>
@@ -227,6 +264,7 @@ h2{font-family:var(--font-display);font-weight:400;font-size:20px;margin:0;lette
   <div class="tabs" role="tablist">
     <button role="tab" id="tab-todo" aria-selected="true" data-tab="todo">할 일</button>
     <button role="tab" id="tab-ward" aria-selected="false" data-tab="ward">옷장</button>
+    <button role="tab" id="tab-shop" aria-selected="false" data-tab="shop">상점</button>
     <button role="tab" id="tab-rec" aria-selected="false" data-tab="rec">기록</button>
   </div>
 
@@ -251,8 +289,14 @@ h2{font-family:var(--font-display);font-weight:400;font-size:20px;margin:0;lette
   </section>
 
   <section class="panel" id="p-ward" hidden>
-    <div class="section-h"><h2>옷장</h2><small>레벨이 오르면 하나씩 열려요</small></div>
+    <div class="section-h"><h2>옷장</h2><small>레벨, 상점, 연속 기록으로 모아요</small></div>
     <div class="grid" id="wardgrid"></div>
+  </section>
+
+  <section class="panel" id="p-shop" hidden>
+    <div class="section-h"><h2>꾸미기 상점</h2><small id="shopcoins"></small></div>
+    <p class="note" style="margin:0">할 일을 끝내면 받은 XP만큼 도토리가 쌓여요. 도토리로 산 아이템은 옷장에서 언제든 갈아입을 수 있어요.</p>
+    <div class="shop" id="shopgrid"></div>
   </section>
 
   <section class="panel" id="p-rec" hidden>
@@ -262,9 +306,13 @@ h2{font-family:var(--font-display);font-weight:400;font-size:20px;margin:0;lette
       <div class="stat"><b id="st-xp">0</b><span>누적 XP</span></div>
     </div>
     <div class="week"><div class="section-h"><h2>최근 7일</h2><small>하루에 끝낸 일 수</small></div><svg id="weekchart" viewBox="0 0 320 120" role="img" aria-label="최근 7일 완료 수"></svg></div>
+    <div class="card" id="cheercard" hidden>
+      <h2>아빠의 응원</h2>
+      <div class="cheers" id="cheerlist"></div>
+    </div>
     <div class="card">
       <h2>보너스 규칙</h2>
-      <p class="note" style="margin:0">하루에 하나라도 끝내면 연속 기록이 이어져요. 연속 2일째부터 하루마다 XP가 10%씩 더 붙고, 최대 +50%까지 올라가요.</p>
+      <p class="note" style="margin:0">하루에 하나라도 끝내면 불꽃이 이어져요. 연속 2일째부터 하루마다 XP가 10%씩 더 붙고, 최대 +50%까지 올라가요. 7일을 이으면 불꽃 머리핀과 도토리 100개, 30일을 이으면 오로라 배경과 도토리 300개를 받아요.</p>
     </div>
     <div class="card">
       <h2>백업</h2>
@@ -297,7 +345,19 @@ const ITEMS=[
   {id:'bandana-red',lv:9,name:'빨간 당초 두건',slot:'head'},
   {id:'bandana-dot',lv:11,name:'물방울 두건',slot:'head'},
   {id:'crown',lv:15,name:'작은 금관',slot:'head'},
+  {id:'ribbon',shop:120,name:'분홍 리본 핀',slot:'pin'},
+  {id:'bowtie',shop:150,name:'나비넥타이',slot:'neck'},
+  {id:'beret',shop:200,name:'빨간 베레모',slot:'head'},
+  {id:'bandana-yellow',shop:250,name:'노란 물방울 두건',slot:'head'},
+  {id:'straw',shop:300,name:'밀짚모자',slot:'head'},
+  {id:'flower',shop:400,name:'꽃 화관',slot:'head'},
+  {id:'flame-pin',streak:7,name:'불꽃 머리핀',slot:'pin'},
+  {id:'aurora',streak:30,name:'오로라 밤',slot:'bg'},
 ];
+const MILESTONES=[{days:7,coins:100,item:'flame-pin'},{days:30,coins:300,item:'aurora'}];
+const BGS=['dusk','moon','forest','stars','aurora'];
+const ACORN='<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8 Q4 3.5 10 3.5 Q16 3.5 16 8Z" fill="#8A5A2B" stroke="#3E3532" stroke-width="1.3" stroke-linejoin="round"/><path d="M5 8 H15 Q15 15 10 17.5 Q5 15 5 8Z" fill="#D9A15A" stroke="#3E3532" stroke-width="1.3" stroke-linejoin="round"/><path d="M10 3.5 L10.6 1.5" stroke="#3E3532" stroke-width="1.4" stroke-linecap="round"/></svg>';
+const FLAME='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 C9 5 13 6 13 10.5 A5 5 0 0 1 3 10.5 C3 8 4.5 6.5 5.5 5.5 C5.5 7.5 6.5 8.5 7.5 8.5 C7 6 7 3.5 8 1Z" fill="currentColor"/></svg>';
 const TITLES=[[1,'아기 라쿤'],[3,'동네 산책러'],[5,'골목 탐험가'],[8,'밤의 수집가'],[12,'숲의 살림꾼'],[15,'전설의 라쿤'],[20,'라쿤 그 자체']];
 const $=s=>document.querySelector(s);
 
@@ -309,7 +369,7 @@ function josa(w){const c=w.charCodeAt(w.length-1);return (c>=0xAC00&&c<=0xD7A3&&
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 
 function fresh(){
-  return {v:1,name:'라쿤',totalXP:0,bestStreak:0,seeded:true,equipped:{},
+  return {v:1,name:'라쿤',totalXP:0,coins:0,owned:{},streakRewards:{},cheerLog:[],bestStreak:0,seeded:true,equipped:{},
     todos:[
       {id:uid(),text:'물 1.5L 마시기',size:'s',daily:true,doneOn:null},
       {id:uid(),text:'10분 스트레칭',size:'m',daily:true,doneOn:null},
@@ -319,10 +379,18 @@ function fresh(){
 let S;
 try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){S=null}
 if(!S||!Array.isArray(S.todos)) S=fresh();
+function migrate(d){
+  if(typeof d.coins!=='number') d.coins=d.totalXP||0;
+  d.owned=d.owned||{}; d.streakRewards=d.streakRewards||{}; d.cheerLog=d.cheerLog||[];
+  return d;
+}
+migrate(S);
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 
 function need(l){return 40+l*20}
 function levelOf(total){let l=1,r=total;while(r>=need(l)){r-=need(l);l++}return {level:l,into:r,need:need(l)}}
+function has(it,level){ if(it.shop) return !!S.owned[it.id]; if(it.streak) return !!S.streakRewards[it.streak]; return level>=it.lv }
+function lockText(it){ return it.shop?'상점에서 도토리 '+it.shop+'개':(it.streak?it.streak+'일 연속 보상':'Lv.'+it.lv+'에 열림') }
 function titleOf(l){let t=TITLES[0][1];for(const [lv,n] of TITLES) if(l>=lv) t=n;return t}
 function daysSet(){return new Set(S.log.map(e=>e.date))}
 function streakNow(){const set=daysSet();let d=today();if(!set.has(d)) d=addDays(d,-1);let n=0;while(set.has(d)){n++;d=addDays(d,-1)}return n}
@@ -337,21 +405,26 @@ function render(){
   $('#rname').textContent=S.name;
   $('#lv').innerHTML='<span>Lv.</span>'+li.level;
   $('#rtitle').textContent=titleOf(li.level);
-  const st=streakNow();
-  $('#streak').innerHTML=st>0?'연속 <b>'+st+'일</b>째'+(st>=2?' · XP +'+Math.min(st-1,5)*10+'%':''):'오늘 하나 끝내면 연속 기록 시작';
+  const st=streakNow(), lit=daysSet().has(today());
+  const fl=$('#flame'); fl.classList.toggle('lit',lit&&st>0);
+  fl.innerHTML=FLAME+(st>0?'<b>'+st+'</b>일 연속'+(lit?'':' · 오늘 아직'):'불꽃 켜기');
+  fl.title=st>=2?'연속 보너스 XP +'+Math.min(st-1,5)*10+'%':'하루에 하나라도 끝내면 불꽃이 이어져요';
+  const ms=MILESTONES.find(m=>!S.streakRewards[m.days]);
+  $('#goal').textContent=ms?(ms.days+'일 보상까지 '+Math.max(ms.days-st,0)+'일'):(st>=2?'XP +'+Math.min(st-1,5)*10+'%':'');
+  $('#coins').innerHTML=ACORN+(S.coins||0);
   $('#xpbar').style.width=(li.into/li.need*100)+'%';
   $('#xptxt').textContent=li.into+' / '+li.need+' XP';
-  const nx=ITEMS.find(i=>i.lv>li.level);
+  const nx=ITEMS.filter(i=>i.lv).sort((a,b)=>a.lv-b.lv).find(i=>i.lv>li.level);
   $('#nexttxt').textContent=nx?'Lv.'+nx.lv+' '+nx.name+' 해금':'모든 아이템 해금!';
 
   // equipment
   for(const it of ITEMS){
-    const on=!!S.equipped[it.id]&&li.level>=it.lv;
+    const on=!!S.equipped[it.id]&&has(it,li.level);
     if(it.slot==='bg') continue;
     const el=document.getElementById('acc-'+it.id); if(el) el.toggleAttribute('hidden',!on);
   }
-  const bg=ITEMS.find(i=>i.slot==='bg'&&S.equipped[i.id]&&li.level>=i.lv);
-  for(const id of ['dusk','moon','forest','stars']) document.getElementById('bg-'+id).toggleAttribute('hidden',(bg?bg.id:'dusk')!==id);
+  const bg=ITEMS.find(i=>i.slot==='bg'&&S.equipped[i.id]&&has(i,li.level));
+  for(const id of BGS) document.getElementById('bg-'+id).toggleAttribute('hidden',(bg?bg.id:'dusk')!==id);
 
   // todos
   const open=S.todos.filter(isOpen);
@@ -363,7 +436,7 @@ function render(){
   $('#todayxp').textContent=tdy.length?'오늘 +'+tdy.reduce((a,e)=>a+e.xp,0)+' XP':'';
   $('#seednote').hidden=!S.seeded||!!S.log.length;
 
-  renderWard(li.level); renderRec(); bubble();
+  renderWard(li.level); renderShop(); renderRec(); bubble();
 }
 const CHECK='<svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5 L6.5 12 L13 4.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const XICON='<svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 3 L11 11 M11 3 L3 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
@@ -389,12 +462,30 @@ const ICONS={
   bandana:'<path d="M8 40 Q4 14 32 12 Q60 14 56 40 Q46 32 32 32 Q18 32 8 40Z" fill="url(#pt-kara-g)" stroke="#3E3532" stroke-width="2"/><path d="M30 44 L18 58 L26 60Z M34 44 L46 58 L38 60Z" fill="url(#pt-kara-g)" stroke="#3E3532" stroke-width="2" stroke-linejoin="round"/><ellipse cx="32" cy="45" rx="5" ry="4" fill="url(#pt-kara-g)" stroke="#3E3532" stroke-width="2"/>',
   'bandana-red':'<path d="M8 40 Q4 14 32 12 Q60 14 56 40 Q46 32 32 32 Q18 32 8 40Z" fill="url(#pt-kara-r)" stroke="#3E3532" stroke-width="2"/><path d="M30 44 L18 58 L26 60Z M34 44 L46 58 L38 60Z" fill="url(#pt-kara-r)" stroke="#3E3532" stroke-width="2" stroke-linejoin="round"/><ellipse cx="32" cy="45" rx="5" ry="4" fill="url(#pt-kara-r)" stroke="#3E3532" stroke-width="2"/>',
   'bandana-dot':'<path d="M8 40 Q4 14 32 12 Q60 14 56 40 Q46 32 32 32 Q18 32 8 40Z" fill="url(#pt-dot-n)" stroke="#3E3532" stroke-width="2"/><path d="M30 44 L18 58 L26 60Z M34 44 L46 58 L38 60Z" fill="url(#pt-dot-n)" stroke="#3E3532" stroke-width="2" stroke-linejoin="round"/><ellipse cx="32" cy="45" rx="5" ry="4" fill="url(#pt-dot-n)" stroke="#3E3532" stroke-width="2"/>',
+  ribbon:'<g transform="translate(32 28)"><path d="M-2 2 L-10 26 L-4 24 L2 4Z M2 2 L10 26 L4 24 L-2 4Z" fill="#E46F92" stroke="#3E3532" stroke-width="2" stroke-linejoin="round"/><path d="M0 0 L-20 -13 Q-25 0 -20 13Z" fill="#F08CA8" stroke="#3E3532" stroke-width="2.4" stroke-linejoin="round"/><path d="M0 0 L20 -13 Q25 0 20 13Z" fill="#F08CA8" stroke="#3E3532" stroke-width="2.4" stroke-linejoin="round"/><circle r="6" fill="#E46F92" stroke="#3E3532" stroke-width="2.4"/></g>',
+  bowtie:'<g transform="translate(32 32)"><path d="M0 0 L-22 -12 Q-26 0 -22 12Z" fill="#33508A" stroke="#3E3532" stroke-width="2.4" stroke-linejoin="round"/><path d="M0 0 L22 -12 Q26 0 22 12Z" fill="#33508A" stroke="#3E3532" stroke-width="2.4" stroke-linejoin="round"/><rect x="-6" y="-6" width="12" height="12" rx="4" fill="#4A6CB0" stroke="#3E3532" stroke-width="2.4"/></g>',
+  beret:'<path d="M6 40 Q8 16 32 14 Q58 16 58 36 Q56 44 32 44 Q10 46 6 40Z" fill="#B5433F" stroke="#3E3532" stroke-width="2.4" stroke-linejoin="round"/><path d="M32 14 L33 7" stroke="#3E3532" stroke-width="3" stroke-linecap="round"/>',
+  'bandana-yellow':'<path d="M8 40 Q4 14 32 12 Q60 14 56 40 Q46 32 32 32 Q18 32 8 40Z" fill="url(#pt-dot-y)" stroke="#3E3532" stroke-width="2"/><path d="M30 44 L18 58 L26 60Z M34 44 L46 58 L38 60Z" fill="url(#pt-dot-y)" stroke="#3E3532" stroke-width="2" stroke-linejoin="round"/><ellipse cx="32" cy="45" rx="5" ry="4" fill="url(#pt-dot-y)" stroke="#3E3532" stroke-width="2"/>',
+  straw:'<ellipse cx="32" cy="42" rx="29" ry="8" fill="#E8C77D" stroke="#3E3532" stroke-width="2"/><path d="M16 42 Q16 18 32 18 Q48 18 48 42Z" fill="#EED38E" stroke="#3E3532" stroke-width="2"/><path d="M16.3 34 Q32 37 47.7 34 L48 40 Q32 43 16 40Z" fill="#8E3A45"/>',
+  flower:'<circle cx="24.6" cy="32.3" r="3.2" fill="#F2A7B8" stroke="#3E3532" stroke-width=".8"/><circle cx="21.8" cy="36.1" r="3.2" fill="#F2A7B8" stroke="#3E3532" stroke-width=".8"/><circle cx="17.4" cy="34.6" r="3.2" fill="#F2A7B8" stroke="#3E3532" stroke-width=".8"/><circle cx="17.4" cy="29.9" r="3.2" fill="#F2A7B8" stroke="#3E3532" stroke-width=".8"/><circle cx="21.8" cy="28.5" r="3.2" fill="#F2A7B8" stroke="#3E3532" stroke-width=".8"/><circle cx="28.9" cy="26.3" r="3.2" fill="#FFFFFF" stroke="#3E3532" stroke-width=".8"/><circle cx="26.2" cy="30.1" r="3.2" fill="#FFFFFF" stroke="#3E3532" stroke-width=".8"/><circle cx="21.7" cy="28.6" r="3.2" fill="#FFFFFF" stroke="#3E3532" stroke-width=".8"/><circle cx="21.7" cy="23.9" r="3.2" fill="#FFFFFF" stroke="#3E3532" stroke-width=".8"/><circle cx="26.2" cy="22.5" r="3.2" fill="#FFFFFF" stroke="#3E3532" stroke-width=".8"/><circle cx="36.0" cy="24.0" r="3.2" fill="#F6D365" stroke="#3E3532" stroke-width=".8"/><circle cx="33.2" cy="27.8" r="3.2" fill="#F6D365" stroke="#3E3532" stroke-width=".8"/><circle cx="28.8" cy="26.4" r="3.2" fill="#F6D365" stroke="#3E3532" stroke-width=".8"/><circle cx="28.8" cy="21.6" r="3.2" fill="#F6D365" stroke="#3E3532" stroke-width=".8"/><circle cx="33.2" cy="20.2" r="3.2" fill="#F6D365" stroke="#3E3532" stroke-width=".8"/><circle cx="43.1" cy="26.3" r="3.2" fill="#B9A3E8" stroke="#3E3532" stroke-width=".8"/><circle cx="40.3" cy="30.1" r="3.2" fill="#B9A3E8" stroke="#3E3532" stroke-width=".8"/><circle cx="35.8" cy="28.6" r="3.2" fill="#B9A3E8" stroke="#3E3532" stroke-width=".8"/><circle cx="35.8" cy="23.9" r="3.2" fill="#B9A3E8" stroke="#3E3532" stroke-width=".8"/><circle cx="40.3" cy="22.5" r="3.2" fill="#B9A3E8" stroke="#3E3532" stroke-width=".8"/><circle cx="47.4" cy="32.3" r="3.2" fill="#F2A7B8" stroke="#3E3532" stroke-width=".8"/><circle cx="44.6" cy="36.1" r="3.2" fill="#F2A7B8" stroke="#3E3532" stroke-width=".8"/><circle cx="40.2" cy="34.6" r="3.2" fill="#F2A7B8" stroke="#3E3532" stroke-width=".8"/><circle cx="40.2" cy="29.9" r="3.2" fill="#F2A7B8" stroke="#3E3532" stroke-width=".8"/><circle cx="44.6" cy="28.5" r="3.2" fill="#F2A7B8" stroke="#3E3532" stroke-width=".8"/>',
+  'flame-pin':'<g transform="translate(32 34) scale(2.2)"><path d="M0 -12 C2 -6 8 -4 8 3 A8 8 0 0 1 -8 3 C-8 -1 -5 -4 -3 -6 C-3 -3 -1 -1 1 -1 C0 -5 -1 -9 0 -12Z" fill="#F08A2C" stroke="#3E3532" stroke-width="1.2" stroke-linejoin="round"/><path d="M0 -2 C1 1 4 2 4 5 A4 4 0 0 1 -4 5 C-4 3 -2 1 0 -2Z" fill="#F7D04A"/></g>',
+  aurora:'<rect x="4" y="4" width="56" height="56" rx="12" fill="#163250"/><path d="M4 30 Q20 12 34 26 T60 18 L60 34 Q44 26 32 40 T4 42Z" fill="#6FE3B4" opacity=".6"/><path d="M4 20 Q24 8 38 18 T60 26 L60 32 Q40 22 30 30 T4 30Z" fill="#B18CF2" opacity=".5"/>',
   crown:'<path d="M12 46 L16 18 L26 32 L32 12 L38 32 L48 18 L52 46Z" fill="#E7B53C" stroke="#B9862A" stroke-width="2" stroke-linejoin="round"/><circle cx="32" cy="34" r="3" fill="#C94E5B"/>',
 };
 function renderWard(level){
   $('#wardgrid').innerHTML=ITEMS.map(it=>{
-    const unlocked=level>=it.lv, on=unlocked&&!!S.equipped[it.id];
-    return '<button type="button" class="ward" data-item="'+it.id+'" aria-pressed="'+on+'"'+(unlocked?'':' disabled')+'><svg viewBox="0 0 64 64" aria-hidden="true">'+ICONS[it.id]+'</svg><span>'+it.name+'</span><span class="lvl">'+(unlocked?(on?'착용 중':'눌러서 착용'):'Lv.'+it.lv+'에 열림')+'</span></button>';
+    const unlocked=has(it,level), on=unlocked&&!!S.equipped[it.id];
+    return '<button type="button" class="ward" data-item="'+it.id+'" aria-pressed="'+on+'"'+(unlocked?'':' disabled')+'><svg viewBox="0 0 64 64" aria-hidden="true">'+ICONS[it.id]+'</svg><span>'+it.name+'</span><span class="lvl">'+(unlocked?(on?'착용 중':'눌러서 착용'):lockText(it))+'</span></button>';
+  }).join('');
+}
+function renderShop(){
+  $('#shopcoins').innerHTML='가진 도토리 '+(S.coins||0)+'개';
+  $('#shopgrid').innerHTML=ITEMS.filter(i=>i.shop).map(it=>{
+    const own=!!S.owned[it.id], short=it.shop-(S.coins||0);
+    const btn=own?'<button type="button" class="buy owned" disabled>가지고 있어요</button>'
+      :(short>0?'<button type="button" class="buy" disabled>'+ACORN+short+'개 더 필요</button>'
+      :'<button type="button" class="buy" data-buy="'+it.id+'">'+ACORN+it.shop+' 사기</button>');
+    return '<div class="sitem"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true">'+ICONS[it.id]+'</svg><span class="nm">'+it.name+'</span>'+btn+'</div>';
   }).join('');
 }
 function renderRec(){
@@ -402,6 +493,8 @@ function renderRec(){
   S.bestStreak=Math.max(S.bestStreak||0,bestStreak());
   $('#st-streak').textContent=S.bestStreak;
   $('#st-xp').textContent=S.totalXP;
+  $('#cheercard').hidden=!S.cheerLog.length;
+  $('#cheerlist').innerHTML=S.cheerLog.slice().reverse().map(c=>'<div class="letter"><span class="from">Lv.'+c.lv+' · '+esc(c.from||'아빠')+'</span><p>'+esc(c.text)+'</p><span class="meta note">'+c.date+'</span></div>').join('');
   const days=[];for(let i=6;i>=0;i--) days.push(addDays(today(),-i));
   const counts=days.map(d=>S.log.filter(e=>e.date===d).length);
   const max=Math.max(4,...counts);
@@ -450,31 +543,66 @@ function complete(id,btn){
   const base=SIZES[t.size].xp, bonus=Math.round(base*Math.min(st-1,5)*0.1), xp=base+bonus;
   t.doneOn=d;
   S.log.push({id:uid(),todoId:t.id,text:t.text,xp,date:d,at:Date.now()});
-  S.totalXP+=xp; S.seeded=false;
+  S.totalXP+=xp; S.coins=(S.coins||0)+xp; S.seeded=false;
+  const stAfter=streakNow(), gained=[];
+  for(const m of MILESTONES) if(stAfter>=m.days&&!S.streakRewards[m.days]){
+    S.streakRewards[m.days]=d; S.coins+=m.coins; gained.push(m);
+    const it=ITEMS.find(i=>i.id===m.item); for(const o of ITEMS) if(o.slot===it.slot) delete S.equipped[o.id]; S.equipped[it.id]=true;
+  }
   save();
   const li=btn.closest('.item'); li.classList.add('pop');
   const r=btn.getBoundingClientRect(); floatXP(r.left+r.width/2,r.top,'+'+xp+' XP');
   happy();
   const after=levelOf(S.totalXP).level;
-  setTimeout(()=>{render(); if(after>before) levelUp(before,after); else say(bonus?'+'+xp+' XP! 연속 보너스 +'+bonus:['좋았어!','하나 끝!','역시 해냈네','멋져, 계속 가보자'][Math.floor(Math.random()*4)]);},380);
+  setTimeout(()=>{render(); for(const m of gained) streakReward(m); if(after>before) levelUp(before,after); else if(!gained.length) say(bonus?'+'+xp+' XP! 연속 보너스 +'+bonus:['좋았어!','하나 끝!','역시 해냈네','멋져, 계속 가보자'][Math.floor(Math.random()*4)]);},380);
 }
 function undo(logId){
   const i=S.log.findIndex(e=>e.id===logId); if(i<0) return;
-  const e=S.log[i]; S.log.splice(i,1); S.totalXP=Math.max(0,S.totalXP-e.xp);
+  const e=S.log[i]; S.log.splice(i,1); S.totalXP=Math.max(0,S.totalXP-e.xp); S.coins=Math.max(0,(S.coins||0)-e.xp);
   const t=S.todos.find(x=>x.id===e.todoId); if(t) t.doneOn=null;
   save(); render(); toast('완료를 취소했어요 (−'+e.xp+' XP)');
 }
+// modal queue: several celebrations can happen from one tap
+const mq=[];
+function showModal(html,after){ mq.push([html,after]); if(mq.length===1) openNext() }
+function openNext(){
+  if(!mq.length) return; const [html,after]=mq[0];
+  $('#modal-box').innerHTML=html+'<button class="btn" type="button" id="modal-ok">좋아!</button>';
+  $('#modal').hidden=false; $('#modal-ok').focus();
+  $('#modal-ok').onclick=()=>{ $('#modal').hidden=true; mq.shift(); if(after) after(); setTimeout(openNext,150) };
+}
+function streakReward(m){
+  const it=ITEMS.find(i=>i.id===m.item);
+  showModal('<p class="note">연속 '+m.days+'일 달성!</p><div class="big" id="modal-title" style="display:flex;justify-content:center;align-items:center;gap:6px"><span style="color:#F08A2C;width:40px;height:40px;display:inline-block">'+FLAME+'</span>'+m.days+'일</div><p>'+m.days+'일 동안 하루도 빠짐없이 해냈어요.</p><div class="unlock">특별 보상: '+it.name+' (자동 착용)</div><div class="unlock" style="display:flex;justify-content:center;gap:4px;align-items:center"><span style="width:18px;height:18px;display:inline-flex">'+ACORN+'</span>도토리 '+m.coins+'개</div>');
+  confetti(); happy();
+}
+// dad's cheer messages: cheers.json next to the app; cached so they still work offline
+const CHEER_KEY='raccoon-cheers-v1';
+let CHEERS=null;
+try{CHEERS=JSON.parse(localStorage.getItem(CHEER_KEY))}catch(e){}
+const IS_PREVIEW=!/github\.io$/.test(location.hostname);
+const SAMPLE_CHEERS={from:'아빠',byLevel:{},anytime:['(미리보기 예시) 레벨업 축하해! 오늘도 한 걸음 해낸 거 정말 멋지다.']};
+fetch('cheers.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{ if(d&&typeof d==='object'){CHEERS=d;try{localStorage.setItem(CHEER_KEY,JSON.stringify(d))}catch(e){}} }).catch(()=>{});
+function cheerFor(lv){
+  const C=CHEERS||(IS_PREVIEW?SAMPLE_CHEERS:null); if(!C) return null;
+  const from=C.from||'아빠';
+  const byLv=C.byLevel&&C.byLevel[String(lv)];
+  if(byLv) return {text:byLv,from};
+  const pool=(C.anytime||[]).filter(t=>t&&!S.cheerLog.some(c=>c.text===t));
+  const list=pool.length?pool:(C.anytime||[]).filter(Boolean);
+  return list.length?{text:list[Math.floor(Math.random()*list.length)],from}:null;
+}
 function levelUp(from,to){
-  const news=ITEMS.filter(i=>i.lv>from&&i.lv<=to);
+  const news=ITEMS.filter(i=>i.lv&&i.lv>from&&i.lv<=to);
   for(const it of news){ for(const o of ITEMS) if(o.slot===it.slot) delete S.equipped[o.id]; S.equipped[it.id]=true; }
   const tOld=titleOf(from), tNew=titleOf(to);
   save(); render();
-  $('#modal-box').innerHTML='<p class="note">레벨 업!</p><div class="big" id="modal-title">Lv.'+to+'</div><p><b>'+esc(S.name)+'</b>'+josa(S.name)+' 한 뼘 자랐어요.</p>'+
+  const ch=cheerFor(to);
+  if(ch){ S.cheerLog.push({lv:to,text:ch.text,from:ch.from,date:today()}); save(); renderRec(); }
+  showModal('<p class="note">레벨 업!</p><div class="big" id="modal-title">Lv.'+to+'</div><p><b>'+esc(S.name)+'</b>'+josa(S.name)+' 한 뼘 자랐어요.</p>'+
     (tNew!==tOld?'<p>새 칭호 <b>'+tNew+'</b></p>':'')+
     news.map(n=>'<div class="unlock">새 아이템: '+n.name+' (자동 착용)</div>').join('')+
-    '<button class="btn" type="button" id="modal-ok">좋아!</button>';
-  $('#modal').hidden=false; $('#modal-ok').focus();
-  $('#modal-ok').onclick=()=>{$('#modal').hidden=true};
+    (ch?'<div class="letter"><span class="from">'+esc(ch.from)+'의 응원</span><p>'+esc(ch.text)+'</p></div>':''));
   confetti(); say('레벨 '+to+'! 고마워',3500);
 }
 
@@ -503,10 +631,21 @@ $('#wardgrid').addEventListener('click',e=>{
   const was=!!S.equipped[it.id]; for(const o of ITEMS) if(o.slot===it.slot) delete S.equipped[o.id];
   if(!was) S.equipped[it.id]=true; save(); render(); if(!was){happy();say(it.name+' 어때?')}
 });
+$('#shopgrid').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-buy]'); if(!b) return; const it=ITEMS.find(i=>i.id===b.dataset.buy);
+  if(!b.classList.contains('armed')){
+    document.querySelectorAll('#shopgrid .buy.armed').forEach(x=>{x.classList.remove('armed');x.innerHTML=ACORN+ITEMS.find(i=>i.id===x.dataset.buy).shop+' 사기'});
+    b.classList.add('armed'); b.textContent='한 번 더 누르면 사요'; return;
+  }
+  if((S.coins||0)<it.shop) return;
+  S.coins-=it.shop; S.owned[it.id]=true;
+  for(const o of ITEMS) if(o.slot===it.slot) delete S.equipped[o.id]; S.equipped[it.id]=true;
+  save(); render(); happy(); say(it.name+' 샀다! 어때?',3000); toast(it.name+' 구입 완료! 옷장에서 바꿔 입을 수 있어요');
+});
 document.querySelector('.tabs').addEventListener('click',e=>{
   const b=e.target.closest('[data-tab]'); if(!b) return; tab=b.dataset.tab;
   document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));
-  $('#p-todo').hidden=tab!=='todo'; $('#p-ward').hidden=tab!=='ward'; $('#p-rec').hidden=tab!=='rec';
+  $('#p-todo').hidden=tab!=='todo'; $('#p-ward').hidden=tab!=='ward'; $('#p-shop').hidden=tab!=='shop'; $('#p-rec').hidden=tab!=='rec';
 });
 $('#rename').addEventListener('click',()=>{
   const box=$('#modal-box');
@@ -531,7 +670,7 @@ $('#bk-restore').addEventListener('click',e=>{
     const d=JSON.parse(decodeURIComponent(escape(atob(raw.slice(6)))));
     if(!Array.isArray(d.todos)||!Array.isArray(d.log)) throw 0;
     if(!b.dataset.armed){b.dataset.armed='1';b.textContent='지금 기록을 덮어써요. 한 번 더 누르기';b.classList.add('danger');return}
-    S=d; save(); render(); $('#bk-in').value=''; $('#bk-msg').textContent='복원했어요.';
+    S=migrate(d); save(); render(); $('#bk-in').value=''; $('#bk-msg').textContent='복원했어요.';
   }catch(err){$('#bk-msg').textContent='백업 코드가 올바르지 않아요. RACC1: 로 시작하는 전체 코드를 붙여 주세요.'}
   if(b.dataset.armed&&!$('#bk-in').value){delete b.dataset.armed;b.textContent='복원하기';b.classList.remove('danger')}
 });
